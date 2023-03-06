@@ -10,6 +10,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -21,7 +22,7 @@ public class Commande {
 	
 	private int idCommande;
 	private LocalDate date;
-	
+	@OneToOne
 	@ManyToOne
 	@JoinColumn(name = "idU")
 	private Utilisateur utilisateur;
